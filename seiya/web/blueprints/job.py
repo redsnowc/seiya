@@ -38,6 +38,5 @@ def education():
 @job_bp.route('/city-edu-salary')
 def cityedu_salary():
     data = analysis_cityedc_salary()
-    print(data)
     return render_template('job/cityedu_salary.html', ces_data=data)
 
