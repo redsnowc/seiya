@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}薪资对比{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">首页</a></li>
+    <li class="breadcrumb-item"><a 
+        href="{{ url_for('job.index') }}">拉勾网职位数据分析</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+        同等学历不同城市薪资对比</li>
+  </ol>
+</nav>
+<br>
+<div id="mountNode"></div>
+<script>
+  var data = {{ ces_data|tojson|safe }}
+
+  var chart = new G2.Chart({
+    container: 'mountNode',
+    forceFit: true,
+    height: 400
+  });
+  chart.source(data, {
+    edu: {
+      range: [0, 1]
+    }
+  });
+  chart.tooltip({
+    crosshairs: {
+      type: 'line'
+    }
+  });
+  chart.axis('salary', {
+    label: {
+      formatter: function formatter(val) {
+        return val + 'k';
+      }
+    }
+  });
+  chart.line().position('city*salary').color('edc');
+  chart.point().position('city*salary').color('edc').size(4).shape('circle').style({
+    stroke: '#fff',
+    lineWidth: 1
+  });
+  chart.render();
+</script>
+{% endblock %}

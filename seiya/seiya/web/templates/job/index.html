@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}JOB{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">首页</a></li>
+    <li class="breadcrumb-item active" aria-current="page">拉勾网职位数据分析</li>
+  </ol>
+</nav>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">热门工作城市</h5>
+        <p class="card-text">职位数 Top10 城市</p>
+        <a href="{{ url_for('job.top10_city') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">薪资最高城市</h5>
+        <p class="card-text">薪资 Top10 城市</p>
+        <a href="{{ url_for('job.top10_wage') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">热门标签</h5>
+        <p class="card-text">热门标签 Top10.</p>
+        <a href="{{ url_for('job.top10_tag') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">工作经验统计</h5>
+        <p class="card-text">工作经验要求一览</p>
+        <a href="{{ url_for('job.experience') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">学历要求统计</h5>
+        <p class="card-text">学历要求一览</p>
+        <a href="{{ url_for('job.education') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">同等学历不同城市薪资对比</h5>
+        <p class="card-text">城市薪资一览</p>
+        <a href="{{ url_for('job.cityedu_salary') }}" 
+           class="btn btn-primary">Button</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

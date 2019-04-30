@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}工作经验{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">首页</a></li>
+    <li class="breadcrumb-item"><a 
+        href="{{ url_for('job.index') }}">拉勾网职位数据分析</a></li>
+    <li class="breadcrumb-item active" aria-current="page">工作经验统计</li>
+  </ol>
+</nav>
+<br>
+<div id="mountNode"></div>
+<script>
+  var data = {{ experience_data|tojson|safe }}
+
+  var chart = new G2.Chart({
+    container: 'mountNode',
+    forceFit: true,
+    height: 400,
+    padding: [40, 0]
+  });
+
+  chart.source(data);
+  chart.coord('theta', {
+    startAngle: Math.PI,
+    endAngle: Math.PI * (3 / 2) 
+  });
+  chart.intervalStack().position('count').color('experience').label('experience');
+
+  chart.render();
+</script>
+{% endblock %}

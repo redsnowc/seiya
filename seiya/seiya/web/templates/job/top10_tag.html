@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}热门标签{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">首页</a></li>
+    <li class="breadcrumb-item"><a 
+        href="{{ url_for('job.index') }}">拉勾网职位数据分析</a></li>
+    <li class="breadcrumb-item active" aria-current="page">热门标签</li>
+  </ol>
+</nav>
+<br>
+<center>
+<div id="c1"></div>
+<script>
+
+const data= {{ tag_data|tojson|safe }};
+
+const chart = new G2.Chart({
+  container: "c1",
+  width: 800,
+  height: 400,
+});
+chart.source(data);
+chart.interval().position("tag*count").color("tag")
+chart.render();
+</script>
+<table class="table table-sm table-borderless">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">排名</th>
+      <th scope="col">标签</th>
+      <th scope="col">次数</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for value in tag_data %}
+    <tr>
+      <td>{{ tag_data.index(value) + 1 }}</td>
+      <td>{{ value['tag'] }}</td>
+      <td>{{ value['count'] }}</td>
+    </tr>
+    {% endfor %}
+</center>
+{% endblock %}
