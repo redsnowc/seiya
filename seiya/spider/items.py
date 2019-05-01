@@ -31,3 +31,14 @@ class TenementItem(scrapy.Item):
     region = scrapy.Field()
     rent = scrapy.Field()
 
+class RestaurantItem(scrapy.Item):
+    name = scrapy.Field()
+    review_num = scrapy.Field()
+    grade = scrapy.Field()
+    per_capita = scrapy.Field()
+    kind = scrapy.Field()
+    taste = scrapy.Field()
+    env = scrapy.Field()
+    service = scrapy.Field()
+    area = scrapy.Field()
+
