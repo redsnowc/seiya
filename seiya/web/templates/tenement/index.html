@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Tenement{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">首页</a></li>
+    <li class="breadcrumb-item active" aria-current="page">链家网租房数据分析</li>
+  </ol>
+</nav>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">热门租房小区</h5>
+        <p class="card-text">Top10 租房小区</p>
+        <a href="{{ url_for('tenement.top10_estate') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">户型分布</h5>
+        <p class="card-text">户型分布分析</p>
+        <a href="{{ url_for('tenement.unit') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">面积分布</h5>
+        <p class="card-text">面积分布分析</p>
+        <a href="{{ url_for('tenement.area') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">热门行政区</h5>
+        <p class="card-text">热门行政区 Top10</p>
+        <a href="{{ url_for('tenement.region') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">学历要求统计</h5>
+        <p class="card-text">学历要求一览</p>
+        <a href="{{ url_for('job.education') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+</div>
+{% endblock %}
+

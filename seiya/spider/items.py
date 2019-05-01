@@ -24,3 +24,10 @@ class JobItem(scrapy.Item):
     tags = scrapy.Field()
     company = scrapy.Field()
 
+class TenementItem(scrapy.Item):
+    title = scrapy.Field()
+    area = scrapy.Field()
+    unit = scrapy.Field()
+    region = scrapy.Field()
+    rent = scrapy.Field()
+

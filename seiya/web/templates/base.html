@@ -55,12 +55,17 @@
                链家网租房数据分析
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">TEST1</a>
-              <a class="dropdown-item" href="#">TEST2</a>
-              <a class="dropdown-item" href="#">TEST3</a>
-              <a class="dropdown-item" href="#">TEST4</a>
-              <a class="dropdown-item" href="#">TEST5</a>
-              <a class="dropdown-item" href="#">TEST6</a>
+              <a class="dropdown-item" 
+                 href="{{ url_for('tenement.top10_estate') }}">
+                 热门租房小区</a>
+              <a class="dropdown-item" 
+                 href="{{ url_for('tenement.unit') }}">户型分布</a>
+              <a class="dropdown-item"
+                 href="{{ url_for('tenement.area') }}">面积分布</a>
+              <a class="dropdown-item" 
+                 href="{{ url_for('tenement.region') }}">热门行政区</a>
+              <a class="dropdown-item" 
+                 href="{{ url_for('tenement.rent') }}">最贵小区</a>
             </div>
           </li>
           <li class="nav-item dropdown">
