@@ -42,3 +42,11 @@ class RestaurantItem(scrapy.Item):
     service = scrapy.Field()
     area = scrapy.Field()
 
+class MovieItem(scrapy.Item):
+    name = scrapy.Field()
+    director = scrapy.Field()
+    grade = scrapy.Field()
+    review_num =scrapy.Field()
+    tags = scrapy.Field()
+    country = scrapy.Field()
+
