@@ -24,8 +24,9 @@
 <div class="card mb-3">
   <img class="card-img-top" src="https://s2.ax1x.com/2019/04/25/EeApIs.jpg" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title"><a href="#">点评网餐馆数据分析</a></h5>
-    <p class="card-text">Something here.</p>
+    <h5 class="card-title"><a href="{{ url_for('movie.index') }}">
+        豆瓣电影 TOP250 数据分析</a></h5>
+    <p class="card-text">评论数量 Top10，好片最多国家、地区，好片最多导演</p>
   </div>
 </div>
 {% endblock %}

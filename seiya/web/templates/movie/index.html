@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Movie{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">首页</a></li>
+    <li class="breadcrumb-item active" aria-current="page">豆瓣电影 TOP250 数据分析</li>
+  </ol>
+</nav>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">评论数 Top10</h5>
+        <p class="card-text">最火热的TOP250</p>
+        <a href="{{ url_for('movie.review_num') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">好片最多国家、地区</h5>
+        <p class="card-text">Top10 好片最多国家、地区</p>
+        <a href="{{ url_for('movie.country') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">好片最多导演</h5>
+        <p class="card-text">出品数大于两部的导演</p>
+        <a href="{{ url_for('movie.director') }}" 
+           class="btn btn-primary">View</a>
+      </div>
+    </div>
+  <br>
+  </div> 
+</div>
+{% endblock %}
+

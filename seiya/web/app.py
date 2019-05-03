@@ -1,6 +1,6 @@
 from flask import Flask
 from seiya.web.config import configs
-from seiya.web.blueprints import home_bp, job_bp, tenement_bp
+from seiya.web.blueprints import home_bp, job_bp, tenement_bp, movie_bp
 
 
 def create_app(config):
@@ -14,3 +14,5 @@ def register_blueprints(app):
     app.register_blueprint(home_bp)
     app.register_blueprint(job_bp)
     app.register_blueprint(tenement_bp)
+    app.register_blueprint(movie_bp)
+

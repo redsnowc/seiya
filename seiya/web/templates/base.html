@@ -73,15 +73,15 @@
                id="navbarDropdown" role="button" data-toggle="dropdown" 
                aria-haspopup="true" 
                aria-expanded="false">
-              点评网餐馆数据分析
+              豆瓣电影 TOP250 数据分析
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">TEST1</a>
-              <a class="dropdown-item" href="#">TEST2</a>
-              <a class="dropdown-item" href="#">TEST3</a>
-              <a class="dropdown-item" href="#">TEST4</a>
-              <a class="dropdown-item" href="#">TEST5</a>
-              <a class="dropdown-item" href="#">TEST6</a>
+              <a class="dropdown-item" 
+                 href="{{ url_for('movie.review_num') }}">评论数 Top10</a>
+              <a class="dropdown-item" 
+                 href="{{ url_for('movie.country') }}">好片最多国家、地区 Top10</a>
+              <a class="dropdown-item" 
+                 href="{{ url_for('movie.director') }}">好片最多导演</a>
             </div>
           </li>
         </ul>
